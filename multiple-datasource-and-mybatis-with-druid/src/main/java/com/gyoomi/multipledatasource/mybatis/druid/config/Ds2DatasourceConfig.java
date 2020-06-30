@@ -47,17 +47,18 @@ public class Ds2DatasourceConfig
 	private String driverClassName;
 
 	@Bean("ds2")
-	@ConfigurationProperties(prefix = "spring.datasource.ds2")
+	@ConfigurationProperties(prefix = "spring.datasource.druid.ds2")
 	public DataSource dataSource(DataSourceProperties properties)
 	{
 
-		return DataSourceBuilder.create(properties.getClassLoader())
-			.type(DruidDataSource.class)
-			.driverClassName(driverClassName)
-			.url(jdbcUrl)
-			.username(username)
-			.password(password)
-			.build();
+//		return DataSourceBuilder.create(properties.getClassLoader())
+//			.type(DruidDataSource.class)
+//			.driverClassName(driverClassName)
+//			.url(jdbcUrl)
+//			.username(username)
+//			.password(password)
+//			.build();
+		return DataSourceBuilder.create().type(DruidDataSource.class).build();
 	}
 
 	@Bean("ds2SqlSessionFactory")

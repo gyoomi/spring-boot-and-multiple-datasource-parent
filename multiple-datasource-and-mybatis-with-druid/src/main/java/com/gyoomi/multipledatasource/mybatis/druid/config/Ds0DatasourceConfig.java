@@ -49,19 +49,19 @@ public class Ds0DatasourceConfig
 
 	@Bean("ds0")
 	@Primary
-	@ConfigurationProperties(prefix = "spring.datasource.ds0")
+	@ConfigurationProperties(prefix = "spring.datasource.druid.ds0")
 	public DataSource dataSource(DataSourceProperties properties)
 	{
 
-		return DataSourceBuilder.create(properties.getClassLoader())
-			.type(DruidDataSource.class)
-			.driverClassName(driverClassName)
-			.url(jdbcUrl)
-			.username(username)
-			.password(password)
-			.build();
+//		return DataSourceBuilder.create(properties.getClassLoader())
+//			.type(DruidDataSource.class)
+//			.driverClassName(driverClassName)
+//			.url(jdbcUrl)
+//			.username(username)
+//			.password(password)
+//			.build();
 		// 单数据源自动配置
-		// return DataSourceBuilder.create().type(HikariDataSource.class).build();
+		return DataSourceBuilder.create().type(DruidDataSource.class).build();
 	}
 
 	@Bean("ds0SqlSessionFactory")
