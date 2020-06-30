@@ -60,6 +60,8 @@ public class Ds0DatasourceConfig
 			.username(username)
 			.password(password)
 			.build();
+		// 单数据源自动配置
+		// return DataSourceBuilder.create().type(HikariDataSource.class).build();
 	}
 
 	@Bean("ds0SqlSessionFactory")
