@@ -4,9 +4,8 @@
  * All Rights Reserved.
  */
 
-package com.gyoomi.multipledatasource.simple.model;
+package com.gyoomi.multipledatasource.mybatis.hikari.model;
 
-import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -20,7 +19,6 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@TableName("t_good")
 public class Good
 {
 	private Long id;

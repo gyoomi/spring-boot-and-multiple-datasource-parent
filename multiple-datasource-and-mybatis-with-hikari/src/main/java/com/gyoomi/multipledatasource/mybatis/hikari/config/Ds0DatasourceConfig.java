@@ -4,13 +4,15 @@
  * All Rights Reserved.
  */
 
-package com.gyoomi.multipledatasource.simple.config;
+package com.gyoomi.multipledatasource.mybatis.hikari.config;
 
+import com.zaxxer.hikari.HikariDataSource;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceProperties;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
@@ -27,16 +29,23 @@ import javax.sql.DataSource;
  * @date 2020-06-29 11:01
  */
 @Configuration
-@MapperScan(basePackages = "com.gyoomi.multipledatasource.simple.dao.ds0", sqlSessionFactoryRef = "ds0SqlSessionFactory")
+@MapperScan(basePackages = "com.gyoomi.multipledatasource.mybatis.hikari.dao.ds0", sqlSessionFactoryRef = "ds0SqlSessionFactory")
 public class Ds0DatasourceConfig
 {
 
 	@Bean("ds0")
 	@Primary
 	@ConfigurationProperties(prefix = "spring.datasource.ds0")
-	public DataSource dataSource()
+	public DataSource dataSource(DataSourceProperties properties)
 	{
-		return DataSourceBuilder.create().build();
+
+		return DataSourceBuilder.create(properties.getClassLoader())
+			.type(HikariDataSource.class)
+			.driverClassName(properties.determineDriverClassName())
+			.url(properties.determineUrl())
+			.username(properties.determineUsername())
+			.password(properties.determinePassword())
+			.build();
 	}
 
 	@Bean("ds0SqlSessionFactory")

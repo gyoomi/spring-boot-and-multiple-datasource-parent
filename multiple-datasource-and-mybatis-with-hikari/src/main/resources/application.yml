@@ -35,14 +35,8 @@ spring:
     active: local
 
 #===========================================
-#   MyBatis Plus
+#   MyBatis
 #===========================================
-mybatis-plus:
-  global-config:
-    db-config:
-      id-type: auto
-  configuration:
-    cache-enabled: false
-    map-underscore-to-camel-case: true
-
-
+mybatis:
+  mapper-locations: classpath:mapper/**
+  type-aliases-package: com.gyoomi.multipledatasource.mybatis.hikari.model
