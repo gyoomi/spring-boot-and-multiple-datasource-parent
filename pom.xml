@@ -12,6 +12,7 @@
         <module>mybatis-plus-and-multiple-datasource</module>
         <module>simple-multiple-datasource</module>
         <module>spring-boot-and-mybatis-with-default</module>
+        <module>spring-boot-and-mybatis-plus-with-default</module>
     </modules>
 
     <packaging>pom</packaging>
