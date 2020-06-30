@@ -13,6 +13,7 @@
         <module>simple-multiple-datasource</module>
         <module>spring-boot-and-mybatis-with-default</module>
         <module>spring-boot-and-mybatis-plus-with-default</module>
+        <module>spring-boot-and-mybatis-with-druid</module>
     </modules>
 
     <packaging>pom</packaging>
