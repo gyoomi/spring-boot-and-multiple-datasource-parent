@@ -1,0 +1,49 @@
+#===========================================
+#   Server
+#===========================================
+server:
+  port: 20000
+  servlet:
+    context-path: /
+    session:
+      # 8小时
+      timeout: 28800
+  shutdown: graceful
+  tomcat:
+    uri-encoding: UTF-8
+  compression:
+    enabled: false
+
+#===========================================
+#   Spring
+#===========================================
+spring:
+  #  autoconfigure:
+  #    exclude: com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure
+  datasource:
+    dynamic:
+      druid:
+        initial-size: 2
+        max-active: 20
+        test-on-borrow: true
+        validation-query: SELECT now()
+  servlet:
+    multipart:
+      max-file-size: 1GB
+  lifecycle:
+    timeout-per-shutdown-phase: 60s
+  profiles:
+    active: local
+
+#===========================================
+#   MyBatis Plus
+#===========================================
+mybatis-plus:
+  global-config:
+    db-config:
+      id-type: auto
+  configuration:
+    cache-enabled: false
+    map-underscore-to-camel-case: true
+
+
