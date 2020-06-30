@@ -35,8 +35,8 @@ import javax.sql.DataSource;
 public class Ds0DatasourceConfig
 {
 
-	@Value("${spring.datasource.ds0.url}")
-	private String jdbcUrl;
+//	@Value("${spring.datasource.ds0.url}")
+//	private String jdbcUrl;
 
 	@Value("${spring.datasource.ds0.username}")
 	private String username;
@@ -53,15 +53,15 @@ public class Ds0DatasourceConfig
 	public DataSource dataSource(DataSourceProperties properties)
 	{
 
-		return DataSourceBuilder.create(properties.getClassLoader())
-			.type(HikariDataSource.class)
-			.driverClassName(driverClassName)
-			.url(jdbcUrl)
-			.username(username)
-			.password(password)
-			.build();
+//		return DataSourceBuilder.create(properties.getClassLoader())
+//			.type(HikariDataSource.class)
+//			.driverClassName(driverClassName)
+//			.url(jdbcUrl)
+//			.username(username)
+//			.password(password)
+//			.build();
 		// 单数据源自动配置
-		// return DataSourceBuilder.create().type(HikariDataSource.class).build();
+		 return DataSourceBuilder.create().type(HikariDataSource.class).build();
 	}
 
 	@Bean("ds0SqlSessionFactory")

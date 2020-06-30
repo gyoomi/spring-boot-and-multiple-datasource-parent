@@ -34,8 +34,8 @@ import javax.sql.DataSource;
 public class Ds2DatasourceConfig
 {
 
-	@Value("${spring.datasource.ds2.url}")
-	private String jdbcUrl;
+//	@Value("${spring.datasource.ds2.url}")
+//	private String jdbcUrl;
 
 	@Value("${spring.datasource.ds2.username}")
 	private String username;
@@ -51,13 +51,14 @@ public class Ds2DatasourceConfig
 	public DataSource dataSource(DataSourceProperties properties)
 	{
 
-		return DataSourceBuilder.create(properties.getClassLoader())
-			.type(HikariDataSource.class)
-			.driverClassName(driverClassName)
-			.url(jdbcUrl)
-			.username(username)
-			.password(password)
-			.build();
+//		return DataSourceBuilder.create(properties.getClassLoader())
+//			.type(HikariDataSource.class)
+//			.driverClassName(driverClassName)
+//			.url(jdbcUrl)
+//			.username(username)
+//			.password(password)
+//			.build();
+		return DataSourceBuilder.create().type(HikariDataSource.class).build();
 	}
 
 	@Bean("ds2SqlSessionFactory")
