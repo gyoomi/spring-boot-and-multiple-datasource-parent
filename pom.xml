@@ -15,6 +15,7 @@
         <module>spring-boot-and-mybatis-with-druid</module>
         <module>spring-boot-and-mybatis-plus-with-druid</module>
         <module>multiple-datasource-and-mybatis-with-hikari</module>
+        <module>multiple-datasource-and-mybatis-with-druid</module>
     </modules>
 
     <packaging>pom</packaging>
