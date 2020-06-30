@@ -16,6 +16,7 @@
         <module>multiple-datasource-and-mybatis-with-hikari</module>
         <module>multiple-datasource-and-mybatis-with-druid</module>
         <module>multiple-datasource-and-mybatis-plus-with-druid</module>
+        <module>multiple-datasource-and-mybatis-plus-with-hikari</module>
     </modules>
 
     <packaging>pom</packaging>

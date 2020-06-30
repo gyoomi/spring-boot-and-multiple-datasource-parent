@@ -1,0 +1,23 @@
+#===========================================
+#   Spring
+#===========================================
+spring:
+  datasource:
+    dynamic:
+      primary: ds0
+      datasource:
+        ds0:
+          url: jdbc:mysql://localhost:3306/db0?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+          driver-class-name: com.mysql.cj.jdbc.Driver
+          username: root
+          password: root
+        ds1:
+          url: jdbc:mysql://localhost:3306/db1?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+          driver-class-name: com.mysql.cj.jdbc.Driver
+          username: root
+          password: root
+        ds2:
+          url: jdbc:mysql://localhost:3306/db2?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+          driver-class-name: com.mysql.cj.jdbc.Driver
+          username: root
+          password: root
