@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>mybatis-plus-and-multiple-datasource</artifactId>
+    <artifactId>multiple-datasource-and-mybatis-plus-with-druid</artifactId>
     <packaging>jar</packaging>
 
     <dependencies>
@@ -69,4 +69,5 @@
             </plugin>
         </plugins>
     </build>
+
 </project>

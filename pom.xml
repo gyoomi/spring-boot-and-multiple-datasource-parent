@@ -9,13 +9,13 @@
     <version>1.0-SNAPSHOT</version>
 
     <modules>
-        <module>mybatis-plus-and-multiple-datasource</module>
         <module>spring-boot-and-mybatis-with-default</module>
         <module>spring-boot-and-mybatis-plus-with-default</module>
         <module>spring-boot-and-mybatis-with-druid</module>
         <module>spring-boot-and-mybatis-plus-with-druid</module>
         <module>multiple-datasource-and-mybatis-with-hikari</module>
         <module>multiple-datasource-and-mybatis-with-druid</module>
+        <module>multiple-datasource-and-mybatis-plus-with-druid</module>
     </modules>
 
     <packaging>pom</packaging>

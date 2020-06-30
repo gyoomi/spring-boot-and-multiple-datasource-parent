@@ -4,7 +4,7 @@
  * All Rights Reserved.
  */
 
-package com.gyoomi.multipledatasource.model;
+package com.gyoomi.multipledatasource.mybatis.plus.druid.model;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.AllArgsConstructor;
@@ -12,7 +12,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
- * Order - Model
+ * Good - Model
  *
  * @author Leon
  * @date 2020-06-28 15:41
@@ -20,11 +20,12 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@TableName("t_order")
-public class Order
+@TableName("t_good")
+public class Good
 {
 	private Long id;
-	private String orderDate;
-	private String orderMoney;
+	private String goodName;
+	private String goodCategory;
+	private String goodContent;
 	private String remark;
 }
