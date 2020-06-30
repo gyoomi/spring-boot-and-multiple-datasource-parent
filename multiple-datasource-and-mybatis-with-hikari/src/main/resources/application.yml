@@ -38,5 +38,4 @@ spring:
 #   MyBatis
 #===========================================
 mybatis:
-  mapper-locations: classpath:mapper/**
   type-aliases-package: com.gyoomi.multipledatasource.mybatis.hikari.model

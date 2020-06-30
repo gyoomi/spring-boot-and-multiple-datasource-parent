@@ -18,38 +18,36 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 
 import javax.sql.DataSource;
 
 /**
- * Ds0 - 数据源 - Config
+ * Ds2 - 数据源 - Config
  *
  * @author Leon
  * @date 2020-06-29 11:01
  */
 @Configuration
-@MapperScan(basePackages = "com.gyoomi.multipledatasource.mybatis.hikari.dao.ds0", sqlSessionFactoryRef = "ds0SqlSessionFactory")
-public class Ds0DatasourceConfig
+@MapperScan(basePackages = "com.gyoomi.multipledatasource.mybatis.hikari.dao.ds2", sqlSessionFactoryRef = "ds2SqlSessionFactory")
+public class Ds2DatasourceConfig
 {
 
-	@Value("${spring.datasource.ds0.url}")
+	@Value("${spring.datasource.ds2.url}")
 	private String jdbcUrl;
 
-	@Value("${spring.datasource.ds0.username}")
+	@Value("${spring.datasource.ds2.username}")
 	private String username;
 
-	@Value("${spring.datasource.ds0.password}")
+	@Value("${spring.datasource.ds2.password}")
 	private String password;
 
-	@Value("${spring.datasource.ds0.driver-class-name}")
+	@Value("${spring.datasource.ds2.driver-class-name}")
 	private String driverClassName;
 
-	@Bean("ds0")
-	@Primary
-	@ConfigurationProperties(prefix = "spring.datasource.ds0")
+	@Bean("ds2")
+	@ConfigurationProperties(prefix = "spring.datasource.ds2")
 	public DataSource dataSource(DataSourceProperties properties)
 	{
 
@@ -62,9 +60,8 @@ public class Ds0DatasourceConfig
 			.build();
 	}
 
-	@Bean("ds0SqlSessionFactory")
-	@Primary
-	public SqlSessionFactory sqlSessionFactory(@Qualifier("ds0") DataSource ds) throws Exception
+	@Bean("ds2SqlSessionFactory")
+	public SqlSessionFactory sqlSessionFactory(@Qualifier("ds2") DataSource ds) throws Exception
 	{
 		SqlSessionFactoryBean bean = new SqlSessionFactoryBean();
 		bean.setDataSource(ds);
@@ -72,16 +69,14 @@ public class Ds0DatasourceConfig
 		return bean.getObject();
 	}
 
-	@Bean("ds0SqlSessionTemplate")
-	@Primary
-	public SqlSessionTemplate sqlSessionTemplate(@Qualifier("ds0SqlSessionFactory") SqlSessionFactory sqlSessionFactory)
+	@Bean("ds2SqlSessionTemplate")
+	public SqlSessionTemplate sqlSessionTemplate(@Qualifier("ds2SqlSessionFactory") SqlSessionFactory sqlSessionFactory)
 	{
 		return new SqlSessionTemplate(sqlSessionFactory);
 	}
 
-	@Bean("ds0DataSourceTransactionManager")
-	@Primary
-	public DataSourceTransactionManager dataSourceTransactionManager(@Qualifier("ds0") DataSource ds)
+	@Bean("ds2DataSourceTransactionManager")
+	public DataSourceTransactionManager dataSourceTransactionManager(@Qualifier("ds2") DataSource ds)
 	{
 		return new DataSourceTransactionManager(ds);
 	}
